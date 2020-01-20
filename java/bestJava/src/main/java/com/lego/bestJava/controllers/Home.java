@@ -1,6 +1,7 @@
 package com.lego.bestJava.controllers;
 
 import com.google.common.collect.ImmutableList;
+import io.vavr.control.Try;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,21 +53,20 @@ public class Home {
         allFutureStrings.forEach((future) -> System.out.println(future.join()));
         return builder.toString();
     }
+
     @GetMapping(value = "/best")
     public String bestPractices() {
-        StringBuffer builder = new StringBuffer();
+        StringBuffer stringBuffer = new StringBuffer();
         List<String> words = ImmutableList.of("1", "2", "3", "4");
         words.stream()
-                .map(this::convertoToNumber)
-                .forEach((value) -> builder.append(value));
-        return builder.toString();
+                .filter(this::isValidNumber)
+                .map(Integer::parseInt)
+                .forEach(stringBuffer::append);
+        return stringBuffer.toString();
     }
-    private Integer convertoToNumber(String value) {
-        try {
-            return Integer.parseInt(value);
-        }
-        catch (NumberFormatException e ){
-            return -1;
-        }
+
+    private boolean isValidNumber(String possibleNumber) {
+        return Try.of(() -> Integer.valueOf(possibleNumber)).isSuccess();
     }
 }
+
