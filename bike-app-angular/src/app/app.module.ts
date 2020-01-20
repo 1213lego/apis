@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
+import {BugService} from './shared/bug.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { HttpClientModule} from '@angular/common/http';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    BugService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

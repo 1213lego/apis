@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {log} from 'util';
+import {BugService} from './shared/bug.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,10 @@ import {log} from 'util';
 })
 export class AppComponent {
   title = 'bike-app-angular';
-  constructor(private htpp: HttpClient) {
+  constructor(private bugService: BugService) {
   }
   onClickBtn() {
-    this.htpp.get('localhost:3000/test').subscribe({
+    this.bugService.getData().subscribe({
       next: value => console.log(value),
       error: err => console.log(err),
       complete:  () => console.log('complete')
