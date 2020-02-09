@@ -12,6 +12,6 @@ public class BeanProvider {
     @Bean
     @Scope("singleton")
     public ExecutorService executorService() {
-        return Executors.newFixedThreadPool(4);
+        return Executors.newWorkStealingPool(Runtime.getRuntime().availableProcessors());
     }
 }

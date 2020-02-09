@@ -1,13 +1,24 @@
 package com.lego.exception.resourceExceptions;
 
-public abstract class ResourceException extends RuntimeException {
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
 
-    protected Object id;
-    protected Class<?> resourceName;
-    public ResourceException(Throwable throwable, Object id, Class<?> resourceName) {
+import java.util.Optional;
+
+@Getter
+public abstract class ResourceException extends RuntimeException {
+    protected HttpStatus httpStatus;
+    protected Optional<Object> id;
+    protected Class<?> resourceType;
+
+    public ResourceException(HttpStatus httpStatus,
+                             Throwable throwable,
+                             Optional<Object> id,
+                             Class<?> resourceType) {
         super(throwable);
         this.id = id;
-        this.resourceName = resourceName;
+        this.resourceType = resourceType;
+        this.httpStatus = httpStatus;
     }
 
     public abstract String getDetailMessage();

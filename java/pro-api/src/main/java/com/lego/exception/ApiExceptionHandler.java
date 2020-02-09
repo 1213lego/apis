@@ -1,9 +1,7 @@
 package com.lego.exception;
 
 import com.google.common.base.Strings;
-import com.lego.exception.resourceExceptions.ResourceAlreadyExistsException;
 import com.lego.exception.resourceExceptions.ResourceException;
-import com.lego.exception.resourceExceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -37,27 +36,15 @@ public class ApiExceptionHandler {
         return new ResponseEntity<>(exceptionResponse, conflict);
     }
 
-   /* @ExceptionHandler(value = {ResourceAlreadyExistsException.class})
-    public ResponseEntity<ExceptionResponse> handleResourceAlreadyExistsException(ResourceAlreadyExistsException e) {
-        HttpStatus conflict = HttpStatus.CONFLICT;
+    @ExceptionHandler(value = {ResourceException.class})
+    public ResponseEntity<ExceptionResponse> handleResourceException(ResourceException e) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(
-                conflict,
+                e.getHttpStatus(),
                 e.getDetailMessage(),
-                e.getLocalizedMessage(),
+                Arrays.asList(e.getMessage(),
+                        e.getCause().getMessage()),
                 LocalDateTime.now()
         );
-        return new ResponseEntity<>(exceptionResponse, conflict);
+        return new ResponseEntity<>(exceptionResponse, e.getHttpStatus());
     }
-
-    @ExceptionHandler(value = {ResourceNotFoundException.class})
-    public ResponseEntity<ExceptionResponse> handleResourceNotFoundException(ResourceNotFoundException e) {
-        HttpStatus conflict = HttpStatus.NOT_FOUND;
-        ExceptionResponse exceptionResponse = new ExceptionResponse(
-                conflict,
-                e.getMessage(),
-                e.getCause(),
-                LocalDateTime.now()
-        );
-        return new ResponseEntity<>(exceptionResponse, conflict);
-    }*/
 }

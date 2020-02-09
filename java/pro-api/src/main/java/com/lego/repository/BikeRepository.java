@@ -5,8 +5,10 @@ import com.lego.model.Bike;
 import com.lego.util.Pair;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public interface BikeRepository extends JpaRepository<Bike, String> {
     boolean existsBikeBySerial(String serial);
@@ -17,4 +19,7 @@ public interface BikeRepository extends JpaRepository<Bike, String> {
 
     @Query("SELECT new com.lego.dto.BikeDto(b) FROM Bike b")
     List<BikeDto> findAllAsDto();
+
+    @Async
+    CompletableFuture<Bike> findBySerial(String serial);
 }

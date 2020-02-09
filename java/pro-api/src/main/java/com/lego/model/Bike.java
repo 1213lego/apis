@@ -1,19 +1,16 @@
 package com.lego.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.List;
 
+@Getter
+@Setter
+@EqualsAndHashCode
 @AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Builder
 @Entity
 @Table
@@ -21,21 +18,24 @@ import java.time.LocalDateTime;
         @NamedQuery(name = "Bike.findAllOrderedDescendingByPrice", query = "select b from Bike b order by b.price desc"),
         @NamedQuery(name = "Bike.pair", query = "select new com.lego.util.Pair(b.serial,b) from Bike b")
 })
-public class Bike implements Persistable<String> {
+public class Bike extends BasicAuditable implements Persistable<String> {
     @Id
+    @Column(length = 30)
     private String serial;
-    @Column(nullable = false, updatable = false)
+    @Column(nullable = false)
+    @Basic(fetch = FetchType.LAZY)
     private LocalDate purchaseDate;
+    @Column(scale = 3)
     private Double weight;
-    @Column(nullable = false)
+    @Column(nullable = false, scale = 3)
     private Double price;
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
-
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private State state;
     @Transient
     private boolean isNew;
+    @ElementCollection
+    private List<String> keywords;
 
     @Override
     public String getId() {
@@ -47,15 +47,6 @@ public class Bike implements Persistable<String> {
         return isNew;
     }
 
-    @PrePersist
-    public void prePersist() {
-        System.out.println("--------------|||@PrePersist|||----------------------------------");
-        this.setCreatedAt(LocalDateTime.now());
-    }
-
-    @PreUpdate
-    public void preUpdate() {
-        System.out.println("--------------|||@PreUpdate|||----------------------------------");
-        this.setUpdatedAt(LocalDateTime.now());
+    public Bike() {
     }
 }
