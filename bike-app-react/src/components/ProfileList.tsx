@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-const socket = require('./rsocket');
 interface Profile {
     id: number;
     email: string;
