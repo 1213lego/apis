@@ -21,13 +21,13 @@ public class WebSocketEventListener {
 
     @EventListener
     public void handleWebSocketConnectListener(final SessionConnectedEvent event) {
-        log.info("New user connected ",event);
+        log.info("----New user connected ----",event);
     }
     @EventListener
     public void handleWebSocketDisnnectListenner(final SessionDisconnectEvent event){
         final StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
         final String userName = (String) headerAccessor.getSessionAttributes().get("username");
-        log.info("User "+userName + " disnnected",event);
+        log.info("User "+userName + " disconnected",event);
         final ChatMessage chatMessage = ChatMessage.builder()
                 .type(MessageType.DISCONNECT)
                 .sender(userName)
