@@ -10,9 +10,15 @@ spring:
     show-sql: false
     generate-ddl: true
     open-in-view: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 3MB
 logging:
   level:
     web: info
 server:
   port: 8080
+filestorage:
+  location: C:\Test
 
