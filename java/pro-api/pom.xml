@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.lego</groupId>
     <artifactId>pro-api</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>pro-api</name>
     <description>Demo project for Spring Boot</description>
 
