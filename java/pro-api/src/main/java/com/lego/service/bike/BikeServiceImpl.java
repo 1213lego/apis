@@ -2,23 +2,20 @@ package com.lego.service.bike;
 
 import com.lego.exception.resourceExceptions.ResourceConflictException;
 import com.lego.model.Bike;
-import com.lego.model.State;
-import com.lego.repository.BikeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lego.repository.jpa.BikeRepository;
+import com.lego.repository.jpa.CountryRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BikeServiceImpl implements BikeService {
     private BikeRepository bikeRepository;
+    private CountryRepository countryRepository;
 
-    @Autowired
-    public BikeServiceImpl(BikeRepository bikeRepository) {
+    public BikeServiceImpl(BikeRepository bikeRepository, CountryRepository countryRepository) {
         this.bikeRepository = bikeRepository;
-        System.out.println(bikeRepository.findAllOrderedDescendingByPrice());
-        System.out.println(bikeRepository.existsBikeBySerial("aaa"));
-        System.out.println(bikeRepository.pair());
-        System.out.println(bikeRepository.findAllAsDto());
+        this.countryRepository = countryRepository;
     }
 
     @Override
@@ -28,7 +25,6 @@ public class BikeServiceImpl implements BikeService {
 
     public Bike save(Bike bike) throws ResourceConflictException, IllegalAccessException {
         bike.setNew(true);
-        bike.setState(State.ACTIVE_STATE);
         bike = BikeService.super.save(bike);
         return bike;
     }
@@ -42,4 +38,13 @@ public class BikeServiceImpl implements BikeService {
     public void delete(Bike entity) {
 
     }
+
+
+    //Paging and sorting
+    private void examplesPaginAndSorting() {
+        Sort.TypedSort<Bike> bike = Sort.sort(Bike.class);
+        Sort sort = bike.by(Bike::getSerial).ascending()
+                .and(bike.by(Bike::getWeight));
+    }
+
 }

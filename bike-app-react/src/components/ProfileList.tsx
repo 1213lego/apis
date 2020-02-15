@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import SockJS from "sockjs-client";
+import {CompatClient, IMessage, Stomp} from "@stomp/stompjs";
+
 interface Profile {
     id: number;
     email: string;
@@ -13,6 +16,7 @@ interface ProfileListState {
 }
 
 class ProfileList extends Component<ProfileListProps, ProfileListState> {
+    private stompClient: CompatClient;
 
     constructor(props: ProfileListProps) {
         super(props);
@@ -21,23 +25,31 @@ class ProfileList extends Component<ProfileListProps, ProfileListState> {
             profiles: [],
             isLoading: false
         };
+        this.onConnected = this.onConnected.bind(this);
+        this.onMessageReceived = this.onMessageReceived.bind(this);
+        this.stompClient = Stomp.over( new WebSocket('ws://localhost:8080/chat-example'));
+        this.stompClient.connect({}, this.onConnected, (error: any) => console.log(error));
     }
 
-    async componentDidMount() {
-        this.setState({isLoading: true});
-        const response = await fetch('http://localhost:3000/profiles');
-        const data = await response.json();
-        this.setState({profiles: data, isLoading: false});
+    sockJSFactory() {
+        return new SockJS('/chat-example');
+    }
 
-        const eventSource = new EventSource('http://localhost:8080/sse/profiles');
-        eventSource.onopen = (event: any) => console.log('open', event);
-        eventSource.onmessage = (event: any) => {
-            console.log(event);
-            const profile = JSON.parse(event.data).source;
-            this.state.profiles.push(profile);
-            this.setState({profiles: this.state.profiles});
-        };
-        eventSource.onerror = (event: any) => console.log('error', event);
+    webSocketFactory() {
+        return new WebSocket('ws://localhost:8080/chat-example')
+    }
+
+    onConnected() {
+        console.log('Connected with server');
+        this.stompClient.subscribe('/topic/public', this.onMessageReceived)
+        this.stompClient.publish({
+            destination: "/app/chat.newUser",
+            body: JSON.stringify({sender: 'React App' + new Date(), type: 'CONNECT'})
+        });
+    }
+
+    onMessageReceived(message: IMessage) {
+        console.log('New Message ', message);
     }
 
     render() {

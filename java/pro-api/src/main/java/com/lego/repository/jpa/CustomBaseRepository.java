@@ -1,4 +1,4 @@
-package com.lego.repository;
+package com.lego.repository.jpa;
 
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;

@@ -1,15 +1,16 @@
 package com.lego.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
-@Getter
-@Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
+@Data
 @AllArgsConstructor
 @Builder
 @Entity
@@ -22,20 +23,19 @@ public class Bike extends BasicAuditable implements Persistable<String> {
     @Id
     @Column(length = 30)
     private String serial;
+
     @Column(nullable = false)
     @Basic(fetch = FetchType.LAZY)
     private LocalDate purchaseDate;
+
     @Column(scale = 3)
     private Double weight;
+
     @Column(nullable = false, scale = 3)
     private Double price;
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private State state;
+
     @Transient
     private boolean isNew;
-    @ElementCollection
-    private List<String> keywords;
 
     @Override
     public String getId() {

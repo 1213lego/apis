@@ -1,4 +1,4 @@
-package com.lego.repository;
+package com.lego.repository.jpa;
 
 import com.lego.model.Country;
 

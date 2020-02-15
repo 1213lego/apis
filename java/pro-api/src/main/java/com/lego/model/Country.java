@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Table
-public class Pais {
+public class Country {
     @Id
     private Long code;
     @Column
