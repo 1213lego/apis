@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:9095/postgres
+    username: lego
+    password: lego
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    generate-ddl: true
+    open-in-view: false
+logging:
+  level:
+    web: info
+server:
+  port: 8080
+

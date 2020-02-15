@@ -1,9 +1,8 @@
 package com.lego.service.bike;
 
 import com.lego.exception.resourceExceptions.ResourceConflictException;
-import com.lego.model.Bike;
+import com.lego.domain.Bike;
 import com.lego.repository.jpa.BikeRepository;
-import com.lego.repository.jpa.CountryRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -11,11 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class BikeServiceImpl implements BikeService {
     private BikeRepository bikeRepository;
-    private CountryRepository countryRepository;
 
-    public BikeServiceImpl(BikeRepository bikeRepository, CountryRepository countryRepository) {
+    public BikeServiceImpl(BikeRepository bikeRepository) {
         this.bikeRepository = bikeRepository;
-        this.countryRepository = countryRepository;
     }
 
     @Override

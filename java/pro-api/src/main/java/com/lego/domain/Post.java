@@ -1,4 +1,4 @@
-package com.lego.model;
+package com.lego.domain;
 
 import lombok.*;
 
@@ -11,10 +11,15 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table
-public class User extends BasicAuditable {
+public class Post extends BasicAuditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String email;
+    private String title;
+    private String text;
+    private String category;
+    @ManyToOne
+    @JoinColumn(name = "authorId")
+    private Author author;
+
 }

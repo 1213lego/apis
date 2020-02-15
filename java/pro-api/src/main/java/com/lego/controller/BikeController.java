@@ -2,7 +2,7 @@ package com.lego.controller;
 
 import com.lego.dto.BikeDto;
 import com.lego.dto.BikeMapper;
-import com.lego.model.Bike;
+import com.lego.domain.Bike;
 import com.lego.repository.jpa.BikeRepository;
 import com.lego.service.bike.BikeService;
 import org.springframework.beans.factory.annotation.Autowired;

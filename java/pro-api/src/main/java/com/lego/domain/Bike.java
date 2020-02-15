@@ -1,4 +1,4 @@
-package com.lego.model;
+package com.lego.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

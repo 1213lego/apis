@@ -1,6 +1,6 @@
 package com.lego.dto;
 
-import com.lego.model.Bike;
+import com.lego.domain.Bike;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

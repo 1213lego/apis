@@ -1,7 +1,7 @@
 package com.lego.repository.jpa;
 
 import com.lego.dto.BikeDto;
-import com.lego.model.Bike;
+import com.lego.domain.Bike;
 import com.lego.util.Pair;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;

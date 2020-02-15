@@ -1,6 +1,6 @@
 package com.lego.dto;
 
-import com.lego.model.Bike;
+import com.lego.domain.Bike;
 import org.mapstruct.Mapper;
 
 import java.util.List;
