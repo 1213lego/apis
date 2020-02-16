@@ -14,13 +14,5 @@ spring:
     multipart:
       enabled: true
       max-file-size: 3MB
-management:
-  server:
-    port: 8081
-  endpoint:
-    health:
-      show-details: always
-server:
-  port: 8080
 filestorage:
   location: C:\Test
