@@ -15,11 +15,12 @@ class SampleDataInitializer(val profileRepository: ProfileRepository) : Applicat
     companion object {
         val log: Logger = LogManager.getLogger(ProfileService::class.java)
     }
+
     override fun onApplicationEvent(event: ApplicationReadyEvent) {
         profileRepository
                 .deleteAll()
                 .thenMany(
-                        Flux.range(65,6)
+                        Flux.range(65, 6)
                                 .map { num -> num.toChar().toLowerCase() }
                                 .map { name -> Profile("${name}@gmail.com") }
                                 .flatMap(profileRepository::save)

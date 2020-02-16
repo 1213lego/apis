@@ -24,7 +24,8 @@ public class RouterFuctionalJ {
 
     @Bean
     RouterFunction<ServerResponse> route() {
-        return RouterFunctions.route()
+        return RouterFunctions
+                .route()
                 .GET("/reservations", request -> ok().body(reservationRepository.findAll(), Reservation.class))
                 .POST("/reservations", this::handleInsert)
                 .build();

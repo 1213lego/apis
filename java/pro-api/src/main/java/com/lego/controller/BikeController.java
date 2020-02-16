@@ -1,8 +1,8 @@
 package com.lego.controller;
 
+import com.lego.domain.Bike;
 import com.lego.dto.BikeDto;
 import com.lego.dto.BikeMapper;
-import com.lego.domain.Bike;
 import com.lego.repository.jpa.BikeRepository;
 import com.lego.service.bike.BikeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +48,7 @@ public class BikeController {
 
     @GetMapping("/slice")
     public Slice<BikeDto> testSlice(@RequestParam(name = "page", defaultValue = "0") int page,
-                                    @RequestParam(name = "size", defaultValue = "20") int size) {
+                                    @RequestParam(name = "size", defaultValue = "21") int size) {
         return bikeRepository
                 .findSliceOfBikesAsDtos(PageRequest.of(page, size));
     }

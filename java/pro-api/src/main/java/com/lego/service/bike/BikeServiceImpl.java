@@ -1,7 +1,7 @@
 package com.lego.service.bike;
 
-import com.lego.exception.resourceExceptions.ResourceConflictException;
 import com.lego.domain.Bike;
+import com.lego.exception.resourceExceptions.ResourceConflictException;
 import com.lego.repository.jpa.BikeRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;

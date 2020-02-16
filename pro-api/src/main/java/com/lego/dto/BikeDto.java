@@ -1,26 +1,32 @@
 package com.lego.dto;
 
+import com.lego.domain.Bike;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.*;
 import java.time.LocalDate;
-
-import com.lego.model.Bike;
 
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
 public class BikeDto {
-	private String serial;
-	private LocalDate purchaseDate;
-	private double weight;
-	private double price;
-	public BikeDto(Bike bike) {
-		serial = bike.getSerial();
-		purchaseDate = bike.getPurchaseDate();
-		weight = bike.getWeight();
-		price = bike.getPrice();
-	}
+    @Size(max = 30)
+    @NotBlank
+    private String serial;
+    @NotNull
+    @PastOrPresent
+    private LocalDate purchaseDate;
+    @PositiveOrZero
+    private double weight;
+    @PositiveOrZero
+    private double price;
+
+    public BikeDto(Bike bike) {
+        serial = bike.getSerial();
+        purchaseDate = bike.getPurchaseDate();
+        weight = bike.getWeight();
+        price = bike.getPrice();
+    }
 }
