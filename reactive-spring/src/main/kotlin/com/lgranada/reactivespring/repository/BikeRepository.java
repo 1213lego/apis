@@ -1,7 +1,7 @@
 package com.lgranada.reactivespring.repository;
 
-import com.lgranada.reactivespring.domain.Profile;
+import com.lgranada.reactivespring.domain.Bike;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
-interface ProfileRepository : ReactiveMongoRepository<Profile, String> {
+public interface BikeRepository extends ReactiveMongoRepository<Bike, String> {
 }
