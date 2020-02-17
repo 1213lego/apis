@@ -7,12 +7,28 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-    show-sql: false
+    show-sql: true
     generate-ddl: true
     open-in-view: false
   servlet:
     multipart:
       enabled: true
       max-file-size: 3MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    debug: true
+    username: gymstatscol@gmail.com
+    password: gymstats123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 filestorage:
   location: C:\Test
+logging:
+  level:
+    web: debug

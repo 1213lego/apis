@@ -33,7 +33,10 @@ public interface IService<T, ID> {
                     break;
                 }
             }
-            logger.warn("Error saving " + getEntityType().getTypeName(), dataAccessException);
+            logger.info(dataAccessException.getClass().getTypeName());
+            logger.info(dataAccessException.getRootCause().getClass().getTypeName());
+            logger.info("1 - " + dataAccessException.getMessage() + " ---");
+            logger.info("2 - " + dataAccessException.getRootCause().getMessage() + " ---");
             throw new ResourceConflictException(dataAccessException.getRootCause(),
                     idOptional,
                     getEntityType());

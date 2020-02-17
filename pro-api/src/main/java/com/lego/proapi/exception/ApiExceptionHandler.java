@@ -2,6 +2,7 @@ package com.lego.proapi.exception;
 
 import com.google.common.base.Strings;
 import com.lego.proapi.exception.resourceExceptions.ResourceException;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -15,6 +16,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
+@Log4j2
 public class ApiExceptionHandler {
     private static final String BAD_REQUEST_RESOURCE_MESSAGE = "El recurso %s no se ecuentra bien formado";
 
@@ -47,4 +49,10 @@ public class ApiExceptionHandler {
         );
         return new ResponseEntity<>(exceptionResponse, e.getHttpStatus());
     }
+
+    /*@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler({Exception.class})
+    public void fatalErrorUnexpectedException(HttpServletRequest request, Exception exception) {
+        log.error(request, exception);
+    }*/
 }

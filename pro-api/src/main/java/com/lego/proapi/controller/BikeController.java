@@ -53,8 +53,9 @@ public class BikeController {
         return bikeRepository
                 .findSliceOfBikesAsDtos(PageRequest.of(page, size));
     }
+
     @GetMapping("/test")
-    public void tes(@RequestHeader(value = "data")String data){
+    public void tes(@RequestHeader(value = "data") String data) {
         System.out.println(data);
     }
 }

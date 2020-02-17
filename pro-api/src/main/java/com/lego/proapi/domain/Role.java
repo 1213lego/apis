@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class Role extends BasicAuditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Short id;
     private String rolName;
+    private String description;
 }
