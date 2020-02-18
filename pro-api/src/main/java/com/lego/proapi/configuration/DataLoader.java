@@ -60,7 +60,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
                 .userName("lgranada")
                 .password(passwordEncoder.encode("lgranada"))
                 .build();
-        saveUserWithRoles(user1, roles.get(0));
+        saveUserWithRoles(user1, roles.get(1));
     }
 
     @Transactional
