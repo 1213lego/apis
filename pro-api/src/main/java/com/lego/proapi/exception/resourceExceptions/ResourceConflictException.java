@@ -6,7 +6,7 @@ import java.util.Optional;
 
 
 public final class ResourceConflictException extends ResourceException {
-    private static final String MESSAGE_TEMPLATE = "The resource %s with id: %s was no save";
+    private static final String MESSAGE_TEMPLATE = " The resource %s with id: %s was no save";
 
     public ResourceConflictException(Throwable throwable,
                                      Optional<Object> id,

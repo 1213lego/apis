@@ -1,4 +1,4 @@
-package com.lego.proapi.service;
+package com.lego.proapi.service.core;
 
 import com.lego.proapi.exception.resourceExceptions.ResourceConflictException;
 import com.lego.proapi.exception.resourceExceptions.ResourceNotFoundException;

@@ -11,4 +11,6 @@ public class BeanProvider {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
 }

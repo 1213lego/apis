@@ -7,8 +7,7 @@ import com.lego.proapi.domain.User;
 import com.lego.proapi.repository.BikeRepository;
 import com.lego.proapi.repository.RoleRepository;
 import com.lego.proapi.repository.UserRepository;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +19,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 @Component
-public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
+public class DataLoader implements CommandLineRunner {
     private final BikeRepository bikeRepository;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -33,7 +32,6 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Transactional
     public void loadUsersAndRoles() {
         List<Role> roles = Stream.of(
                 Role
@@ -54,16 +52,15 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
                 .password(passwordEncoder.encode("1213lego"))
                 .build();
         saveUserWithRoles(user, roles.get(0), roles.get(1));
-        User user1 = User
+        user = User
                 .builder()
                 .email("lgranada@soaint.com")
                 .userName("lgranada")
                 .password(passwordEncoder.encode("lgranada"))
                 .build();
-        saveUserWithRoles(user1, roles.get(1));
+        saveUserWithRoles(user, roles.get(1));
     }
 
-    @Transactional
     public void saveUserWithRoles(User user, Role... roles) {
         user = userRepository.save(user);
         for (Role role : roles) {
@@ -71,7 +68,6 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         }
     }
 
-    @Transactional
     public void loadBikes() {
         List<Bike> bikes = IntStream.range(1, 5)
                 .mapToObj((i) -> Bike.builder()
@@ -86,7 +82,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     @Transactional
-    public void onApplicationEvent(ContextRefreshedEvent event) {
+    public void run(String... args) throws Exception {
         loadBikes();
         loadUsersAndRoles();
     }

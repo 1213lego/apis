@@ -22,11 +22,13 @@ public class MainController {
     public String admin() {
         return "ADMIN";
     }
+
     @PreAuthorize("hasRole('USER')")
     @GetMapping(value = "/user")
     public String user() {
         return "user";
     }
+
     @PreAuthorize("hasRole('USER') and hasRole('ADMIN')")
     @GetMapping(value = "/user-admin")
     public String userAndAdmin() {

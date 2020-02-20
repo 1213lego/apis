@@ -23,10 +23,11 @@ public interface BikeRepository extends JpaRepository<Bike, String> {
     List<Pair<String, Bike>> pair();
 
     @Query("SELECT b FROM Bike b")
-    <T> List<T> findAllDynamic (Class<T> type);
+    <T> List<T> findAllDynamic(Class<T> type);
 
     @Query("SELECT b FROM Bike b")
     Slice<BikeDto> findAllAsDto(Pageable pageable);
+
     @Async
     CompletableFuture<Bike> findBySerial(String serial);
 
