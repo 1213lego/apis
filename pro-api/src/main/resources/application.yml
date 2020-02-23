@@ -31,4 +31,15 @@ filestorage:
   location: C:\Test
 logging:
   level:
+    org:
+    ##springframework: DEBUG
     web: debug
+my:
+  uuid: ${random:uuid}
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: "*"

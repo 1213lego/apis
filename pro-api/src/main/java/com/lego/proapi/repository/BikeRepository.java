@@ -22,8 +22,11 @@ public interface BikeRepository extends JpaRepository<Bike, String> {
 
     List<Pair<String, Bike>> pair();
 
-    @Query("SELECT new com.lego.proapi.dto.BikeDto(b) FROM Bike b")
-    List<BikeDto> findAllAsDto();
+    @Query("SELECT b FROM Bike b")
+    <T> List<T> findAllDynamic(Class<T> type);
+
+    @Query("SELECT b FROM Bike b")
+    Slice<BikeDto> findAllAsDto(Pageable pageable);
 
     @Async
     CompletableFuture<Bike> findBySerial(String serial);
