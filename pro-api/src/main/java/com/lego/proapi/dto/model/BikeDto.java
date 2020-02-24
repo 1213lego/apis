@@ -1,4 +1,4 @@
-package com.lego.proapi.dto;
+package com.lego.proapi.dto.model;
 
 
 import com.lego.proapi.domain.Bike;

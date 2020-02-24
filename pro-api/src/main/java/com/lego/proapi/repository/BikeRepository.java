@@ -2,7 +2,7 @@ package com.lego.proapi.repository;
 
 
 import com.lego.proapi.domain.Bike;
-import com.lego.proapi.dto.BikeDto;
+import com.lego.proapi.dto.model.BikeDto;
 import com.lego.proapi.util.Pair;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
@@ -33,7 +33,7 @@ public interface BikeRepository extends JpaRepository<Bike, String> {
 
     Slice<Bike> queryAllByCreationDateAfter(LocalDateTime creationDate);
 
-    @Query("SELECT new com.lego.proapi.dto.BikeDto(b) FROM Bike b")
+    @Query("SELECT new com.lego.proapi.dto.model.BikeDto(b) FROM Bike b")
     Slice<BikeDto> findSliceOfBikesAsDtos(Pageable pageable);
 
     @Modifying

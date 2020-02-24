@@ -49,6 +49,8 @@ public class DataLoader implements CommandLineRunner {
                 .builder()
                 .email("luisgranada1213@gmail.com")
                 .userName("1213lego")
+                .firstName("Luis Eduardo")
+                .lastName("Granada Orozco")
                 .password(passwordEncoder.encode("1213lego"))
                 .build();
         saveUserWithRoles(user, roles.get(0), roles.get(1));
@@ -56,6 +58,8 @@ public class DataLoader implements CommandLineRunner {
                 .builder()
                 .email("lgranada@soaint.com")
                 .userName("lgranada")
+                .firstName("Luis Eduardo")
+                .lastName("Granada Orozco")
                 .password(passwordEncoder.encode("lgranada"))
                 .build();
         saveUserWithRoles(user, roles.get(1));

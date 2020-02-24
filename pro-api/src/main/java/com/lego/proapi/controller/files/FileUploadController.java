@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/files")
 @Slf4j
 public class FileUploadController {
-    protected final FileStorageService fileStorageService;
+    private final FileStorageService fileStorageService;
 
     public FileUploadController(FileStorageService fileStorageService) {
         this.fileStorageService = fileStorageService;

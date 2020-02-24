@@ -1,8 +1,8 @@
 package com.lego.proapi.service.user;
 
 import com.lego.proapi.domain.User;
+import com.lego.proapi.dto.model.UserDto;
 import com.lego.proapi.repository.UserRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,18 +23,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public JpaRepository<User, Long> getRepository() {
-        return userRepository;
+    public UserDto signUp(UserDto userDto) {
+        return null;
     }
 
     @Override
-    public Class<User> getEntityType() {
-        return User.class;
-    }
-
-    @Override
-    public void delete(User entity) {
-
+    public UserDto login(UserDto userDto) {
+        return null;
     }
 }
 

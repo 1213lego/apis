@@ -1,6 +1,7 @@
 package com.lego.proapi.domain;
 
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Accessors(chain = true)
 @Entity
 @Table(schema = "public")
 public class User extends AbstractBasicAuditable {
@@ -22,6 +24,8 @@ public class User extends AbstractBasicAuditable {
     @Column(unique = true)
     private String email;
     private String password;
+    private String firstName;
+    private String lastName;
     @ToString.Exclude
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
     private List<UserRole> roles;

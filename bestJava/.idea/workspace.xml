@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="630ff796-b74d-4cfa-9fb3-7f3ef115c0b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/main/java/com/lego/bestJava/BestJavaApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/main/java/com/lego/bestJava/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/main/java/com/lego/bestJava/UrlTramite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/main/java/com/lego/bestJava/configuration/BeanProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/main/java/com/lego/bestJava/controllers/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/test/java/com/lego/bestJava/BestJavaApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/test/java/com/lego/bestJava/configuration/BeanProviderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/bestJava/src/test/java/com/lego/bestJava/controllers/HomeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/ProApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/configuration/BeanProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/configuration/DataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/configuration/FileStorageProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/configuration/SpringFoxConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/controller/BikeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/controller/files/FileUploadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/controller/files/UploadFileResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/domain/Auditable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/domain/BasicAuditable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/domain/Bike.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/domain/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/domain/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/domain/UserRoleKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/dto/BikeDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/dto/BikeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/exception/ApiExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/exception/ExceptionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/exception/FileStorageException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/exception/MyFileNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/exception/resourceExceptions/ResourceConflictException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/exception/resourceExceptions/ResourceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/exception/resourceExceptions/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/repository/jpa/BikeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/repository/jpa/CustomBaseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/repository/jpa/PersistenceConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/service/FileStorageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/service/IService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/service/bike/BikeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/service/bike/BikeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/util/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/java/com/lego/util/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/resources/blog.graphqls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/main/webapp/WEB-INF/weblogic.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/pro-api/src/test/java/ProApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/ReactiveSpringApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/config/SampleDataInitializer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/config/WebClientConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/controller/ProfileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/controller/RSocketGreetingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/controller/RouterFuctional.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/controller/RouterFuctionalJ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/domain/Profile.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/domain/Reservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/repository/ProfileRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/repository/ReservationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/service/GreetingsRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/service/GreetingsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/service/IntervalMessageProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/kotlin/com/lgranada/reactivespring/service/ProfileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/reactive-spring/src/test/kotlin/com/lgranada/reactivespring/ReactiveSpringApplicationTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/java/com/lgranada/websocket/WebsocketApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/java/com/lgranada/websocket/config/WebSocketEventListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/java/com/lgranada/websocket/config/WebSocketMessageConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/java/com/lgranada/websocket/controller/ChatController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/java/com/lgranada/websocket/model/ChatMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/java/com/lgranada/websocket/model/MessageType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/resources/aaa.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/resources/static/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/resources/static/img/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/main/resources/static/js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/src/test/java/com/lgranada/websocket/WebsocketApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/websocket/stale_outputs_checked" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../websocket/stale_outputs_checked" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bestJava" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bestJava" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bestJava" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bestJava" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1XttjoWXZHqhazCWBida6fuTX9F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager" selected="Gradle.bestJava [clean]">
+    <configuration name="bestJava [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="bestJava [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="bestJava [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BestJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bestJava_main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lego.bestJava.BestJavaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.bestJava [jar]" />
+        <item itemvalue="Gradle.bestJava [build]" />
+        <item itemvalue="Gradle.bestJava [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="630ff796-b74d-4cfa-9fb3-7f3ef115c0b0" name="Default Changelist" comment="" />
+      <created>1581877356332</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581877356332</updated>
+      <workItem from="1581877364319" duration="195000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="426" y="75" key="#Notifications" timestamp="1581877501963">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="426" y="75" key="#Notifications/0.0.1366.728/1366.-168.1536.824@0.0.1366.728" timestamp="1581877501963" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1581877563166">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-168.1536.824@0.0.1366.728" timestamp="1581877563166" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1581877563166">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.-168.1536.824@0.0.1366.728" timestamp="1581877563166" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1581877563166">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.-168.1536.824@0.0.1366.728" timestamp="1581877563166" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1581877563166">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.-168.1536.824@0.0.1366.728" timestamp="1581877563166" />
+  </component>
+</project>

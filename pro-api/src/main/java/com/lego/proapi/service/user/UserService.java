@@ -1,7 +1,8 @@
 package com.lego.proapi.service.user;
 
-import com.lego.proapi.domain.User;
-import com.lego.proapi.service.core.IService;
+import com.lego.proapi.dto.model.UserDto;
 
-public interface UserService extends IService<User, Long> {
+public interface UserService {
+    UserDto signUp(UserDto userDto);
+    UserDto login(UserDto userDto);
 }
