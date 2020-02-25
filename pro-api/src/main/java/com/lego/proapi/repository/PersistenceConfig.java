@@ -1,8 +1,8 @@
 package com.lego.proapi.repository;
 
+import com.lego.proapi.configuration.Constants;
 import com.lego.proapi.configuration.security.CustomUserDetail;
 import com.lego.proapi.domain.User;
-import com.lego.proapi.service.user.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
@@ -18,6 +18,12 @@ import java.util.Optional;
 @EnableJpaAuditing
 @EnableJpaRepositories(basePackages = "com.lego.proapi.repository")
 public class PersistenceConfig {
+    private final Constants constants;
+
+    public PersistenceConfig(Constants constants) {
+        this.constants = constants;
+    }
+
     @Bean
     public AuditorAware<User> auditorAware() {
         return () -> Optional.ofNullable(SecurityContextHolder.getContext())
@@ -28,7 +34,7 @@ public class PersistenceConfig {
                     if (userDetail instanceof CustomUserDetail) {
                         return ((CustomUserDetail) userDetail).getUser();
                     } else {
-                        return UserServiceImpl.ANONYMOUS_USER;
+                        return constants.anonymousUser();
                     }
                 });
     }

@@ -2,8 +2,8 @@ package com.lego.proapi.controller;
 
 
 import com.lego.proapi.domain.Bike;
-import com.lego.proapi.dto.model.BikeDto;
 import com.lego.proapi.dto.mapper.BikeMapper;
+import com.lego.proapi.dto.model.BikeDto;
 import com.lego.proapi.repository.BikeRepository;
 import com.lego.proapi.service.bike.BikeService;
 import lombok.extern.log4j.Log4j2;

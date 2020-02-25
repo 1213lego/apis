@@ -16,60 +16,57 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 @Component
-public class DataLoader implements CommandLineRunner {
+public class Constants implements CommandLineRunner {
     private final BikeRepository bikeRepository;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
+    private Role userRole;
+    private Role adminRole;
+    private User anonymousUser;
 
-    public DataLoader(BikeRepository bikeRepository, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
+    public Constants(BikeRepository bikeRepository, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
         this.bikeRepository = bikeRepository;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
-    public void loadUsersAndRoles() {
-        List<Role> roles = Stream.of(
-                Role
-                        .builder()
-                        .rolName("ADMIN")
-                        .build(),
-                Role
-                        .builder()
-                        .rolName("USER")
-                        .build()
-        )
-                .map(roleRepository::save)
-                .collect(Collectors.toList());
-        User user = User
-                .builder()
-                .email("luisgranada1213@gmail.com")
-                .userName("1213lego")
-                .firstName("Luis Eduardo")
-                .lastName("Granada Orozco")
-                .password(passwordEncoder.encode("1213lego"))
-                .build();
-        saveUserWithRoles(user, roles.get(0), roles.get(1));
-        user = User
-                .builder()
-                .email("lgranada@soaint.com")
-                .userName("lgranada")
-                .firstName("Luis Eduardo")
-                .lastName("Granada Orozco")
-                .password(passwordEncoder.encode("lgranada"))
-                .build();
-        saveUserWithRoles(user, roles.get(1));
+    public User anonymousUser() {
+        if (anonymousUser == null) {
+            anonymousUser = User
+                    .builder()
+                    .email("anonymous@anonymous.com")
+                    .roles(List.of())
+                    .userName("anonymous")
+                    .build();
+            userRepository.save(anonymousUser);
+        }
+        return anonymousUser;
     }
 
-    public void saveUserWithRoles(User user, Role... roles) {
-        user = userRepository.save(user);
-        for (Role role : roles) {
-            user.addRol(role);
+    public Role getUserRole() {
+        if (userRole == null) {
+            userRole = Role
+                    .builder()
+                    .rolName("USER")
+                    .build();
+            roleRepository.save(userRole);
         }
+        return userRole;
+    }
+
+    public Role getAdminRole() {
+        if (adminRole == null) {
+            adminRole = Role
+                    .builder()
+                    .rolName("ADMIN")
+                    .build();
+            roleRepository.save(adminRole);
+        }
+        return adminRole;
     }
 
     public void loadBikes() {
@@ -88,6 +85,5 @@ public class DataLoader implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
         loadBikes();
-        loadUsersAndRoles();
     }
 }
