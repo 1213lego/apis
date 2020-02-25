@@ -41,6 +41,9 @@ public class Constants implements CommandLineRunner {
                     .email("anonymous@anonymous.com")
                     .roles(List.of())
                     .userName("anonymous")
+                    .firstName("anonymous")
+                    .lastName("anonymous")
+                    .password("anonymous")
                     .build();
             userRepository.save(anonymousUser);
         }

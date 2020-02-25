@@ -20,7 +20,7 @@ public class UserMapperImpl implements UserMapper {
         transforms.put("roles", (this::mapUserRolesToRolesDto));
         Set<String> ignoredFields = new HashSet<>();
         ignoredFields.add("password");
-        return Utils.map(user, UserDto.class, transforms,ignoredFields);
+        return Utils.map(user, UserDto.class, transforms, ignoredFields);
     }
 
     @Override
@@ -52,10 +52,12 @@ public class UserMapperImpl implements UserMapper {
         return user.getRoles()
                 .stream()
                 .map(UserRole::getRole)
-                .map((role) -> new RoleDto()
-                        .setDescription(role.getDescription())
-                        .setId(role.getId())
-                        .setRolName(role.getRolName()))
+                .map((role) -> RoleDto
+                        .builder()
+                        .description(role.getDescription())
+                        .id(role.getId())
+                        .rolName(role.getRolName())
+                        .build())
                 .collect(Collectors.toList());
     }
 }

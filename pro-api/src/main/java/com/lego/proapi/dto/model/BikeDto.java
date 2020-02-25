@@ -1,17 +1,21 @@
 package com.lego.proapi.dto.model;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.lego.proapi.domain.Bike;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
 public class BikeDto {
     @Size(max = 30)
     @NotBlank
