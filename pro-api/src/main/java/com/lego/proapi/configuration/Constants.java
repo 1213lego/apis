@@ -55,6 +55,7 @@ public class Constants implements CommandLineRunner {
             userRole = Role
                     .builder()
                     .rolName("USER")
+                    .description("Normal user")
                     .build();
             roleRepository.save(userRole);
         }

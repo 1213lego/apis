@@ -1,0 +1,28 @@
+{
+  "name": "pro-scal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon --config \"./nodemon.json\"/",
+    "start": "tsc && node dist/index.js"
+  },
+  "bin": {
+    "pro-scal": "bin/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "figlet": "^1.3.0",
+    "inquirer": "^7.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.4",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  }
+}

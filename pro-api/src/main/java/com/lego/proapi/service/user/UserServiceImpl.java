@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
         try {
             saveUserWithRoles(user, constants.getUserRole());
         } catch (DataAccessException dataAccessException) {
-            log.error(dataAccessException);
+            log.error("Error signup user ", userDto, dataAccessException);
             throw new ResourceConflictException(dataAccessException.getRootCause(),
                     Optional.ofNullable(userDto.getUserName()),
                     User.class);
@@ -51,10 +51,10 @@ public class UserServiceImpl implements UserService {
     }
 
     private void saveUserWithRoles(User user, Role... roles) {
-        user = userRepository.save(user);
         for (Role role : roles) {
             user.addRol(role);
         }
+        user = userRepository.save(user);
     }
 
     @Override

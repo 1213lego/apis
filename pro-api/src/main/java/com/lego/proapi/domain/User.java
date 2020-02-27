@@ -27,7 +27,7 @@ public class User extends AbstractBasicAuditable {
     private String firstName;
     private String lastName;
     @ToString.Exclude
-    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
     private List<UserRole> roles;
 
     public void addRol(Role role) {

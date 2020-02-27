@@ -60,4 +60,61 @@ public class Utils {
     public static <S, T> void merge(S source, T target) {
         map(source, target, new HashMap<>(), new HashSet<>());
     }
+
+    public static <S, T> MapperBuilder<S, T> mapperBuilder() {
+        return new MapperBuilder<S, T>();
+    }
+
+    public static class MapperBuilder<S, T> {
+        private Map<String, Function<S, Object>> transforms;
+        private Set<String> ignoredField;
+        private S source;
+
+        private T target;
+        private Class<T> targetType;
+
+        private MapperBuilder() {
+            transforms = new HashMap<>();
+            ignoredField = new HashSet<>();
+        }
+
+        public MapperBuilder<S, T> addTransform(String fieldName, Function<S, Object> functionTransform) {
+            transforms.put(fieldName, functionTransform);
+            return this;
+        }
+
+        public MapperBuilder<S, T> ignoreField(String fieldName) {
+            ignoredField.add(fieldName);
+            return this;
+        }
+
+        public MapperBuilder<S, T> source(S source) {
+            this.source = source;
+            return this;
+        }
+
+        public MapperBuilder<S, T> target(T target) {
+            this.target = target;
+            return this;
+        }
+
+        public MapperBuilder<S, T> targetType(Class<T> targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
+        @SneakyThrows
+        public T map() {
+            return Utils.map(
+                    source,
+                    targetType.getDeclaredConstructor().newInstance(),
+                    transforms,
+                    ignoredField
+            );
+        }
+
+        public void merge() {
+            Utils.merge(source, targetType);
+        }
+    }
 }
