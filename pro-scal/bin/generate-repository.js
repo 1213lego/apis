@@ -1,24 +1,18 @@
-import fs from 'fs';
-import path from 'path';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const BASE_REPOSITORY_PACKAGE = 'import org.springframework.data.jpa.repository.';
 const directoryUtils = require('./directoryUtils');
-
-
-function getPackage(pathPackage: string): string {
-    let parts = pathPackage.split(path.sep);
+function getPackage(pathPackage) {
+    let parts = pathPackage.split(path_1.default.sep);
     parts = parts.splice(parts.findIndex(value => value === "java") + 1);
     return parts.join(".");
 }
-
-interface RepositoryData {
-    repositoryInterface: any;
-    enityName: any;
-    entityPackage: any;
-    repositoryPackage: any;
-    typeId: any;
-}
-
-function generateRepository(args: RepositoryData) {
+function generateRepository(args) {
     const repositoryImport = `${BASE_REPOSITORY_PACKAGE}${args.repositoryInterface}`;
     const repositoryName = `${args.enityName}Repository`;
     const directoryTree = directoryUtils.directoryTree(process.cwd());
@@ -29,12 +23,11 @@ function generateRepository(args: RepositoryData) {
     ${repositoryImport};
     public interface ${repositoryName} extends ${args.repositoryInterface}<${args.enityName},${args.typeId}> {
     }`;
-    console.log(path.join(repositoryPath.file, `${repositoryName}.java`));
-    const repositoryFile = fs.createWriteStream(path.join(repositoryPath.file, `${repositoryName}.java`));
-    repositoryFile.write(repositoryTemplate, ((error: any) => console.log(error || '')));
+    console.log(path_1.default.join(repositoryPath.file, `${repositoryName}.java`));
+    const repositoryFile = fs_1.default.createWriteStream(path_1.default.join(repositoryPath.file, `${repositoryName}.java`));
+    repositoryFile.write(repositoryTemplate, ((error) => console.log(error || '')));
 }
-
-
 module.exports = {
     cli: generateRepository
 };
+//# sourceMappingURL=generate-repository.js.map
