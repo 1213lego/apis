@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-const BASE_REPOSITORY_PACKAGE = 'import org.springframework.data.jpa.repository.';
-const directoryUtils = require('./directoryUtils');
+import {repositories} from './repositoryPackages';
 
+const BASE_REPOSITORY_PACKAGE = 'import org.springframework.data.jpa.repository.';
+const directoryUtils = require('../directoryUtils');
 
 function getPackage(pathPackage: string): string {
     let parts = pathPackage.split(path.sep);
@@ -19,14 +20,13 @@ interface RepositoryData {
 }
 
 function generateRepository(args: RepositoryData) {
-    const repositoryImport = `${BASE_REPOSITORY_PACKAGE}${args.repositoryInterface}`;
     const repositoryName = `${args.enityName}Repository`;
     const directoryTree = directoryUtils.directoryTree(process.cwd());
     const entityPath = directoryUtils.searchDirectory(directoryTree, args.entityPackage);
     const repositoryPath = directoryUtils.searchDirectory(directoryTree, args.repositoryPackage);
     const repositoryTemplate = `package ${getPackage(repositoryPath.file)};
     import ${getPackage(entityPath.file)}.${args.enityName};
-    ${repositoryImport};
+    import ${repositories[args.repositoryInterface]};
     public interface ${repositoryName} extends ${args.repositoryInterface}<${args.enityName},${args.typeId}> {
     }`;
     console.log(path.join(repositoryPath.file, `${repositoryName}.java`));
