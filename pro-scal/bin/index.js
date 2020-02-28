@@ -54,7 +54,7 @@ const run = async () => {
     // ask questions
     // ask questions
     const answers = await askQuestions();
-    require('../src/cli').cli(answers);
+    require('../src/generate-repository').cli(answers);
     // create the file
     // show success message
 };
