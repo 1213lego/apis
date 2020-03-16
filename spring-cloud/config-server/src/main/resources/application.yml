@@ -1,0 +1,25 @@
+info:
+  component: config-server
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:/home/lego/config-files-repository
+  security:
+    user:
+      name: root
+      password: s3cr3t
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    region: default
+    registry-fetch-interval-seconds: 25
+logging:
+  level:
+    org.springframework.cloud: 'info'

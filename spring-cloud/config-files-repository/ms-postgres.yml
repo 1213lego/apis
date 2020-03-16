@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ms-postgres
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: lego
+    password: lego
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    generate-ddl: true
+    open-in-view: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 0
+eureka:
+  client:
+    registry-fetch-interval-seconds: 30
+    region: default
+messages:
+  error: some error
+  succesful: All fine
