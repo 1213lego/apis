@@ -1,7 +1,7 @@
 package com.lego.proapi.controller.files;
 
 import com.lego.proapi.service.FileStorageService;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/files")
-@Slf4j
+@Log4j2
 public class FileUploadController {
     private final FileStorageService fileStorageService;
 

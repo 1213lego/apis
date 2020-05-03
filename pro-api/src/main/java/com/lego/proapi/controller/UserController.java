@@ -5,6 +5,7 @@ import com.lego.proapi.dto.mapper.UserMapper;
 import com.lego.proapi.dto.model.UserDto;
 import com.lego.proapi.service.user.UserService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class UserController {
     private final UserService userService;
     private final UserMapper userMapper;
 
-    public UserController(UserService userService, UserMapper userMapper) {
+    public UserController(UserService userService, @Qualifier("UserMapperImplCustom") UserMapper userMapper) {
         this.userService = userService;
         this.userMapper = userMapper;
     }
@@ -32,6 +33,6 @@ public class UserController {
 
     @PostMapping(value = "/login")
     public void login(@AuthenticationPrincipal CustomUserDetail activeUser) {
-        log.info(activeUser);
+        log.info(activeUser.toString());
     }
 }

@@ -6,6 +6,7 @@ import com.lego.proapi.domain.UserRole;
 import com.lego.proapi.dto.model.RoleDto;
 import com.lego.proapi.dto.model.UserDto;
 import com.lego.proapi.util.Utils;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
+@Qualifier("UserMapperImplCustom")
 public class UserMapperImpl implements UserMapper {
     @Override
     public UserDto userToUserDto(User user) {

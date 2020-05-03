@@ -58,7 +58,19 @@ public class Main {
                 new LoggingHandler(target));
     }
 
+    private static String concatWithSeparator(String separator, String... strings) {
+        if (strings.length == 0) return "";
+        StringBuilder stringBuilder = new StringBuilder(strings[0]);
+        for (int i = 1; i < strings.length; i++) {
+            stringBuilder.append(separator).append(strings[i]);
+        }
+        return stringBuilder.toString();
+    }
+
     public static void main(String[] args) {
+        System.out.println(concatWithSeparator("-", "a"));
+        System.out.println(concatWithSeparator("-", "a", "b"));
+        System.out.println(concatWithSeparator("/"));
         // write your code here
         Person p = new Person();
         Human human = withLogging(p, Human.class);

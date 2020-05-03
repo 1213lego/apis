@@ -4,7 +4,7 @@ package com.lego.proapi.service;
 import com.lego.proapi.configuration.FileStorageProperties;
 import com.lego.proapi.exception.FileStorageException;
 import com.lego.proapi.exception.MyFileNotFoundException;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-@Slf4j
+@Log4j2
 @Service
 public class FileStorageService {
     private final Path fileStoreLocation;
