@@ -16,11 +16,19 @@ public class Utils {
                                 T target,
                                 Map<String, Function<S, Object>> customTransform,
                                 Set<String> ignoreFields) {
+        Objects.requireNonNull(source, "Source required");
+        Objects.requireNonNull(target, "Target required");
+        customTransform = Objects.requireNonNullElse(customTransform, new HashMap<>());
+        ignoreFields = Objects.requireNonNullElse(ignoreFields, new HashSet<>());
+
         Class sourceType = source.getClass();
         Class targetType = target.getClass();
+
+        Set<String> finalIgnoreFields = ignoreFields;
         List<Field> sourceFields = Stream.of(sourceType.getDeclaredFields())
-                .filter((field -> !ignoreFields.contains(field.getName())))
+                .filter((field -> !finalIgnoreFields.contains(field.getName())))
                 .collect(Collectors.toList());
+
         for (Field field : sourceFields) {
             field.setAccessible(true);
             Object fieldValue = field.get(source);
@@ -88,6 +96,11 @@ public class Utils {
             return this;
         }
 
+        public MapperBuilder<S, T> ignoreField(String... fieldName) {
+            ignoredField.addAll(Arrays.asList(fieldName));
+            return this;
+        }
+
         public MapperBuilder<S, T> source(S source) {
             this.source = source;
             return this;
@@ -114,7 +127,12 @@ public class Utils {
         }
 
         public void merge() {
-            Utils.merge(source, targetType);
+            Utils.map(
+                    source,
+                    target,
+                    transforms,
+                    ignoredField
+            );
         }
     }
 }

@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      name: eureka-server
-      uri: http://localhost:8888
-      username: root
-      password: s3cr3t

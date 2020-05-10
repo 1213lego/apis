@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     private final Constants constants;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
 
     public UserServiceImpl(UserRepository userRepository, Constants constants, PasswordEncoder passwordEncoder, RoleRepository roleRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
         try {
             saveUserWithRoles(user, constants.getUserRole());
         } catch (DataAccessException dataAccessException) {
-            log.error("Error signup user ", userDto, dataAccessException);
+            log.error("Error signup user " + userDto, dataAccessException);
             throw new ResourceConflictException(dataAccessException.getRootCause(),
                     Optional.ofNullable(userDto.getUserName()),
                     User.class);
