@@ -15,7 +15,7 @@ import javax.persistence.MappedSuperclass;
 @Setter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class AbstractAuditable<U> extends AbstractBasicAuditable {
+public abstract class Auditable<U> extends BasicAuditable {
     @CreatedBy
     @ManyToOne
     @JoinColumn

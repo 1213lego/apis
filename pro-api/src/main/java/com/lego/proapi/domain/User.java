@@ -15,7 +15,7 @@ import java.util.List;
 @Accessors(chain = true)
 @Entity
 @Table(schema = "public")
-public class User extends AbstractBasicAuditable {
+public class User extends BasicAuditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

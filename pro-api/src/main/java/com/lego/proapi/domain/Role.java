@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table
-public class Role extends AbstractBasicAuditable {
+public class Role extends BasicAuditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Short id;

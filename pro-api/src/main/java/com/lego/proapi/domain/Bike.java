@@ -19,7 +19,7 @@ import java.time.LocalDate;
         @NamedQuery(name = "Bike.findAllOrderedDescendingByPrice", query = "select b from Bike b order by b.price desc"),
         @NamedQuery(name = "Bike.pair", query = "select new com.lego.proapi.util.Pair(b.serial,b) from Bike b")
 })
-public class Bike extends AbstractAuditable<User> implements Persistable<String> {
+public class Bike extends Auditable<User> implements Persistable<String> {
     @Id
     @Column(length = 30)
     private String serial;

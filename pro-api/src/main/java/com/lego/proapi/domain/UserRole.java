@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table
-public class UserRole extends AbstractBasicAuditable {
+public class UserRole extends BasicAuditable {
     @EmbeddedId
     private UserRoleKey id;
     @ManyToOne
