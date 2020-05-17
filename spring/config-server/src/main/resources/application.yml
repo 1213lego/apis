@@ -7,8 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: file:/home/lego/Escritorio/apis
-          basedir:
+          uri: file:/home/lego/Documentos/config-repository-files
   security:
     user:
       name: root
