@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: zuul-api-gateway
+  cloud:
+    config:
+      username: root
+      password: s3cr3t
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true

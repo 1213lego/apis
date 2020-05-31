@@ -6,6 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Objects;
+
 @Log4j2
 @RestController
 public class ApiTest {
@@ -21,14 +24,15 @@ public class ApiTest {
     public String test() {
         log.info("/test");
         ResponseEntity<Object[]> forEntity = restTemplate.getForEntity("http://api/apps", Object[].class);
-        for (Object a: forEntity.getBody()) {
-        }
+        log.info("--Result {}", Objects.requireNonNullElse(forEntity.getBody(), new String[0]).length);
         return "OK";
     }
 
     @GetMapping("/test-feign")
     public String testfeign() {
+        log.info("/test-feign");
         api1Client.apps();
+        log.info("--Result {}", api1Client.apps().size());
         return "OK";
     }
 }

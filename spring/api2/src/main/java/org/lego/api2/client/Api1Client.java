@@ -9,5 +9,5 @@ import java.util.List;
 @FeignClient("api")
 public interface Api1Client {
     @GetMapping("/apps")
-    List<HashMap<String,Object>> apps();
+    List<HashMap<String, Object>> apps();
 }

@@ -3,14 +3,14 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/postgres
-    username: lego
-    password: lego
+    username: postgres
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
     generate-ddl: true
-    open-in-view: false
+    open-in-view: true #enabled, this means that the transaction context is kept open until the end of the web request
   servlet:
     multipart:
       enabled: true
